@@ -23,8 +23,10 @@ app.post('/submit-to-zoho', async (req, res) => {
 
         res.json({ success: true, message: 'Form submitted successfully!' });
     } catch (error) {
+        console.error('Error submitting form:', error.message);
         res.status(500).json({ success: false, message: 'Submission failed', error: error.message });
     }
 });
 
-app.listen(3001, () => console.log('Server running on port 3001'));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
