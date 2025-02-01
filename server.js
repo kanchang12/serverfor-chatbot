@@ -19,7 +19,7 @@ app.post('/submit-to-zoho', async (req, res) => {
         formData.append('Message', req.body.message);
 
         // Make the POST request to Zoho with the correct headers
-        const response = await axios.post(
+        const response = await axios.get(
             'https://forms.zohopublic.in/banglaygolpo1/form/ContactUs/formperma/tygGH6LFquRO7lGxeTjGLt7WjgEioGLQf2F6L6XKSPo',
             formData,
             { headers: formData.getHeaders() }  // This is important for correct submission
